@@ -90,7 +90,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 
 //Write the routes
-app.use("/api/auth", auth);
+//app.use("/api/auth", auth);
 
 app.use(error);
 
@@ -100,9 +100,9 @@ app.listen(port, () => console.log('Listening on port ', port, "..."));
 `
 
 module.exports = {
-    asyncContent,
-    errorContent,
-    gitignoreContent,
-    envContent,
-    indexContent
+  asyncContent,
+  errorContent,
+  gitignoreContent,
+  envContent,
+  indexContent
 };

@@ -27,7 +27,7 @@ const installDependencies = () => {
     console.log('Installing dependencies...');
 
     // Run the npm install command using child_process
-    exec('npm install express cors dotenv ejs joi joi-objectid lodash mongoose', (error, stdout, stderr) => {
+    exec('cd .. && cd .. && npm install express cors dotenv ejs joi joi-objectid lodash mongoose', (error, stdout, stderr) => {
         if (error) {
             console.error(`Error during npm install: ${error.message}`);
             return;
