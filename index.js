@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
 const projectRoot = path.resolve(__dirname, '..', '..');
 const allContent = require('./allContent');
 
@@ -23,26 +22,6 @@ const createFolder = (folderPath) => {
     }
 }
 
-const installDependencies = () => {
-    console.log('Installing dependencies...');
-
-    // Run the npm install command using child_process
-    exec('cd .. && cd .. && npm install express cors dotenv ejs joi joi-objectid lodash mongoose', (error, stdout, stderr) => {
-        if (error) {
-            console.error(`Error during npm install: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.error(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-        console.log('Dependencies installed successfully!');
-    });
-}
-
-
-
 const main = () => {
     createFiles("middleware", "async.js", allContent.asyncContent)
     createFiles("middleware", "error.js", allContent.errorContent)
@@ -53,8 +32,7 @@ const main = () => {
     createFiles("", ".env", allContent.envContent)
     createFiles("", ".gitignore", allContent.gitignoreContent)
     createFiles("", "app.js", allContent.indexContent)
-
-    installDependencies()
+    createFiles("", "helpNote..txt", allContent.helpNoteContent)
 };
 
 main();

@@ -99,10 +99,13 @@ app.listen(port, () => console.log('Listening on port ', port, "..."));
 
 `
 
+const helpNoteContent = `npm install express cors dotenv ejs joi joi-objectid lodash mongoose`
+
 module.exports = {
   asyncContent,
   errorContent,
   gitignoreContent,
   envContent,
-  indexContent
+  indexContent,
+  helpNoteContent
 };
