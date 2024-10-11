@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { exec } = require('child_process');
-const projectRoot = path.resolve(__dirname);
+const projectRoot = path.resolve(__dirname, '..', '..');
 const allContent = require('./allContent');
 
 const createFiles = (folderPath, fileName, content) => {
